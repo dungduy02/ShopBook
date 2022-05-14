@@ -1,7 +1,14 @@
+.logo_book {
+	width: 100px;
+	height: 100px;
+}
+
+.text {
+	height: 100px;
+}
 
 .header__logo {
 	margin-left: 50px;
-	padding: 15px 0;
 }
 
 .header__logo a {
@@ -9,7 +16,7 @@
 }
 
 .header__menu {
-	padding: 24px 0;
+	/* padding: 24px 0; */
 }
 
 .header__menu ul li {
@@ -48,14 +55,18 @@
 .header__menu ul li .header__menu__dropdown li a {
 	text-transform: capitalize;
 	color: #ffffff;
+	text-decoration: none;
 	font-weight: 400;
 	padding: 5px 15px;
 }
-.active{
+
+.active {
 	background-color: white;
 }
+
 .header__menu ul li.active a {
 	color: #be975a;
+	text-decoration: none;
 }
 
 .header__menu ul li:hover .header__menu__dropdown {
@@ -75,6 +86,7 @@
 .header__menu ul li a {
 	font-size: 14px;
 	color: #252525;
+	text-decoration: none;
 	text-transform: uppercase;
 	font-weight: 700;
 	letter-spacing: 2px;
@@ -89,7 +101,6 @@
 
 .header__cart {
 	text-align: right;
-	padding: 24px 0;
 }
 
 .header__cart ul {
@@ -143,11 +154,140 @@
 	font-weight: 700;
 }
 
-.humberger__menu__wrapper {
-	display: none;
-}
-
 .humberger__open {
 	display: none;
 }
 
+
+.menu_size {
+	width: 700px;
+}
+
+input[type=text] {
+	width: 130px;
+	-webkit-transition: width 0.4s ease-in-out;
+	transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+	width: 100%;
+}
+
+.logo_book {
+	width: 130px;
+}
+
+.cart_favorite {
+	width: 260px;
+}
+
+
+.openBtn {
+	background: #be975a;
+	border: none;
+	padding: 10px 15px;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.openBtn:hover {
+	background: #66563c;
+}
+
+.overlay {
+	height: 200px;
+	width: 100%;
+	display: none;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
+.overlay-content {
+	position: relative;
+	top: 46%;
+	width: 80%;
+	text-align: center;
+	margin-top: 30px;
+	margin: auto;
+}
+
+.overlay .closebtn {
+	position: absolute;
+	top: 20px;
+	right: 45px;
+	font-size: 60px;
+	cursor: pointer;
+	color: white;
+}
+
+.overlay .closebtn:hover {
+	color: #ccc;
+}
+
+.overlay input[type=text] {
+	padding: 15px;
+	font-size: 17px;
+	border: none;
+	float: left;
+	width: 80%;
+	background: white;
+}
+
+.overlay input[type=text]:hover {
+	background: #f1f1f1;
+}
+
+.overlay button {
+	float: left;
+	width: 20%;
+	padding: 15px;
+	background: #ddd;
+	font-size: 17px;
+	border: none;
+	cursor: pointer;
+}
+
+.overlay button:hover {
+	background: #bbb;
+}
+
+.navbar {
+	background-color: #f5f5f5;
+	position: fixed;
+	z-index: 1000;
+	margin-left: 100px;
+	height: 80px;
+	text-align: center;
+	top: 0px;
+	box-shadow: 2px 5px 5px rgb(0, 0, 0, 0.35);
+	transition: top 0.3s;
+}
+
+.back-to-top {
+	width: 50px;
+	height: 50px;
+	background: #6f6f6f;
+	font-size: 35px;
+	color: whitesmoke;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	left: 90%;
+	z-index: 50;
+	visibility: hidden;
+	opacity: 0;
+	bottom: 0px;
+}
+
+.back-to-top.showUp {
+	visibility: visible;
+	opacity: 1;
+
+}

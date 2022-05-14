@@ -9,6 +9,10 @@ import { HeaderComponent } from './component/header/header.component';
 import { MenuComponent } from './component/menu/menu.component';
 import { CategoryComponent } from './component/category/category.component';
 import { ProfileComponent } from './component/profile/profile.component';
+import { SliderComponent } from './component/slider/slider.component';
+import { BlogComponent } from './component/blog/blog.component';
+import { FooterComponent } from './component/footer/footer.component';
+import { ShoppingComponent } from './component/shopping/shopping.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { ProfileComponent } from './component/profile/profile.component';
     HeaderComponent,
     MenuComponent,
     ProfileComponent,
-    CategoryComponent
+    CategoryComponent,
+    SliderComponent,
+    BlogComponent,
+    FooterComponent,
+    ShoppingComponent
   ],
   imports: [
     CommonModule,

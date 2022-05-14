@@ -1,24 +1,35 @@
-<div class="container">
+<div id="myOverlay" class="overlay">
+    <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+    <div class="overlay-content">
+        <form action="/action_page.php">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+</div>
+
+<div class="container menu_fixed" id="">
     <div class="row">
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-1">
             <div class="header__logo">
-                <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                <a href="./index.html"><img src="../../../../assets/img/logo.png" alt="" width="260px" height="80px"></a>
             </div>
         </div>
-        <div class="col-lg-6">
+        <div class="menu_size">
             <nav class="header__menu">
                 <ul>
                     <li class="active"><a href="./index.html">Trang Chủ</a></li>
-                    <li><a href="./shop-grid.html">Mua Sắm</a></li>
+                    <li>  <a href="/shopping" [routerLink]="['/shopping']">Mua sắm</a></li>
                     <li><a href="./sale.html">Giảm Giá</a>
-                
+
                     </li>
                     <li><a href="./blog.html">Bài Viết</a></li>
                     <li><a href="./contact.html">Liên Hệ</a></li>
+                    <button class="openBtn" onclick="openSearch()"><i class="fa fa-search"></i></button>
                 </ul>
             </nav>
         </div>
-        <div class="col-lg-3">
+        <div class="cart_favorite mt-3">
             <div class="header__cart">
                 <ul>
                     <li><a href="./Favorite.html"><i class="fa fa-heart"></i> <span>1</span></a></li>
@@ -32,3 +43,4 @@
         <i class="fa fa-bars"></i>
     </div>
 </div>
+<div class="back-to-top"><i class=" fa fa-chevron-up"></i></div>
