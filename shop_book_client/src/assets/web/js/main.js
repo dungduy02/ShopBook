@@ -7,30 +7,51 @@
     Created: Colorlib
 ---------------------------------------------------------  */
 
+
 // fixed menu cuon
-$(document).ready(function(){
-    $(window).scroll(function(event){
+$(document).ready(function () {
+    $(window).scroll(function (event) {
         var pos_body = $('html,body').scrollTop();
         console.log(pos_body);
-        if(pos_body > 20){
+        if (pos_body > 20) {
             $('.menu_fixed').addClass('navbar');
         }
-        else{
+        else {
             $('.menu_fixed').removeClass('navbar');
         }
-        if(pos_body > 200){
+        if (pos_body > 200) {
             $('.back-to-top').addClass('showUp');
         }
-        else{
+        else {
             $('.back-to-top').removeClass('showUp');
         }
     });
-    $('.back-to-top').click(function(event){
+    $('.back-to-top').click(function (event) {
         $('html,body').animate({
-            scrollTop:0},
+            scrollTop: 0
+        },
             1200)
     })
 });
+
+$('input.input-qty').each(function () {
+    var $this = $(this),
+        qty = $this.parent().find('.is-form'),
+        min = Number($this.attr('min')),
+        max = Number($this.attr('max'))
+    if (min == 0) {
+        var d = 0
+    } else d = min
+    $(qty).on('click', function () {
+        if ($(this).hasClass('minus')) {
+            if (d > min) d += -1
+        } else if ($(this).hasClass('plus')) {
+            var x = Number($this.val()) + 1
+            if (x <= max) d += 1
+        }
+        $this.attr('value', d).val(d)
+    })
+})
 'use strict';
 
 (function ($) {
@@ -77,8 +98,8 @@ $(document).ready(function(){
     });
 
     /*------------------
-		Navigation
-	--------------------*/
+        Navigation
+    --------------------*/
     $(".mobile-menu").slicknav({
         prependTo: '#mobile-menu-wrap',
         allowParentLinks: true
@@ -120,7 +141,7 @@ $(document).ready(function(){
     });
 
 
-    $('.hero__categories__all').on('click', function(){
+    $('.hero__categories__all').on('click', function () {
         $('.hero__categories ul').slideToggle(400);
     });
 
@@ -184,8 +205,8 @@ $(document).ready(function(){
     });
 
     /*-----------------------
-		Price Range Slider
-	------------------------ */
+        Price Range Slider
+    ------------------------ */
     var rangeSlider = $(".price-range"),
         minamount = $("#minamount"),
         maxamount = $("#maxamount"),
@@ -201,8 +222,8 @@ $(document).ready(function(){
             maxamount.val(ui.values[1] + 'VNĐ');
         }
     });
-    minamount.val( rangeSlider.slider("values", 0)+' VNĐ');
-    maxamount.val(rangeSlider.slider("values", 1)+' VNĐ');
+    minamount.val(rangeSlider.slider("values", 0) + ' VNĐ');
+    maxamount.val(rangeSlider.slider("values", 1) + ' VNĐ');
 
 
     /*--------------------------
@@ -211,8 +232,8 @@ $(document).ready(function(){
     $("select").niceSelect();
 
     /*------------------
-		Single Product
-	--------------------*/
+        Single Product
+    --------------------*/
     $('.product__details__pic__slider img').on('click', function () {
 
         var imgurl = $(this).data('imgbigurl');
@@ -225,8 +246,8 @@ $(document).ready(function(){
     });
 
     /*-------------------
-		Quantity change
-	--------------------- */
+        Quantity change
+    --------------------- */
     var proQty = $('.pro-qty');
     proQty.prepend('<span class="dec qtybtn">-</span>');
     proQty.append('<span class="inc qtybtn">+</span>');
@@ -248,40 +269,40 @@ $(document).ready(function(){
 
 })(jQuery);
 
- 
+
 function openSearch() {
     document.getElementById("myOverlay").style.display = "block";
-  }
+}
 
-  function closeSearch() {
+function closeSearch() {
     document.getElementById("myOverlay").style.display = "none";
-  }
+}
 
 //   slider
-let slideIndex = 1;
-showSlides(slideIndex);
+// let slideIndex = 1;
+// showSlides(slideIndex);
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+// function plusSlides(n) {
+//   showSlides(slideIndex += n);
+// }
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+// function currentSlide(n) {
+//   showSlides(slideIndex = n);
+// }
 
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-}
+// function showSlides(n) {
+//   let i;
+//   let slides = document.getElementsByClassName("mySlides");
+//   let dots = document.getElementsByClassName("dot");
+//   if (n > slides.length) {slideIndex = 1}
+//   if (n < 1) {slideIndex = slides.length}
+//   for (i = 0; i < slides.length; i++) {
+//     slides[i].style.display = "none";
+//   }
+//   for (i = 0; i < dots.length; i++) {
+//     dots[i].className = dots[i].className.replace(" active", "");
+//   }
+//   slides[slideIndex-1].style.display = "block";
+//   dots[slideIndex-1].className += " active";
+// }
 

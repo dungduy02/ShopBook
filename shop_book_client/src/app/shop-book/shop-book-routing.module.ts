@@ -5,6 +5,7 @@ import { HeaderComponent } from './component/header/header.component';
 import { HomeComponent } from './component/home/home.component';
 import { LoginComponent } from './component/login/login.component';
 import { MenuComponent } from './component/menu/menu.component';
+import { ProductDetailComponent } from './component/product-detail/product-detail.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { RegisterComponent } from './component/register/register.component';
 import { ShoppingComponent } from './component/shopping/shopping.component';
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path:'menu',component:MenuComponent},
   {path:'category',component:CategoryComponent},
   {path:'profile',component:ProfileComponent},
-  {path:'shopping',component:ShoppingComponent}
+  {path:'shopping',component:ShoppingComponent},
+  {path:'productDetail',component:ProductDetailComponent}
 ];
 
 @NgModule({

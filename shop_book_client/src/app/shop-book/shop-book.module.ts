@@ -13,6 +13,7 @@ import { SliderComponent } from './component/slider/slider.component';
 import { BlogComponent } from './component/blog/blog.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { ShoppingComponent } from './component/shopping/shopping.component';
+import { ProductDetailComponent } from './component/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ShoppingComponent } from './component/shopping/shopping.component';
     SliderComponent,
     BlogComponent,
     FooterComponent,
-    ShoppingComponent
+    ShoppingComponent,
+    ProductDetailComponent
   ],
   imports: [
     CommonModule,
