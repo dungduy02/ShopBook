@@ -3,6 +3,10 @@
   Footer
 -----------------------*/
 
+a{
+	text-decoration: none;
+}
+
 .footer {
 	background: #F3F6FA;
 	padding-top: 70px;

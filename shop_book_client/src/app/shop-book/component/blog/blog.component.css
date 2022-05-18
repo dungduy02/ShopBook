@@ -4,6 +4,10 @@
 	padding-bottom: 50px;
 }
 
+a{
+	text-decoration: none;
+}
+
 .from-blog .blog__item {
 	margin-bottom: 30px;
 }
