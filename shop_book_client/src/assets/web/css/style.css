@@ -170,17 +170,6 @@ ol {
 
 /* buttons */
 
-.primary-btn {
-	display: inline-block;
-	font-size: 14px;
-	padding: 10px 28px 10px;
-	color: #ffffff;
-	text-transform: uppercase;
-	font-weight: 700;
-	background: #7fad39;
-	letter-spacing: 2px;
-}
-
 .site-btn {
 	font-size: 14px;
 	color: #ffffff;
