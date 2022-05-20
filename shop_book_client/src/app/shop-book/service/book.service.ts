@@ -11,4 +11,7 @@ export class BookService {
   getBooks(): Observable<any> {
     return this.http.get(API_URL + 'all');
   }
+  getABook(id: any) :Observable<any> {
+    return this.http.get(API_URL + 'find/' + id);
+  }
 }

@@ -9,21 +9,21 @@ import { ProductDetailComponent } from './component/product-detail/product-detai
 import { ProfileComponent } from './component/profile/profile.component';
 import { RegisterComponent } from './component/register/register.component';
 import { ShoppingComponent } from './component/shopping/shopping.component';
-
+import {NgxPaginationModule} from 'ngx-pagination';
 const routes: Routes = [
   {path: 'home',component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path:'header',component:HeaderComponent},
-  {path:'menu',component:MenuComponent},
+  {path:'menu/:searchTerm', component:ShoppingComponent},
   {path:'category',component:CategoryComponent},
   {path:'profile',component:ProfileComponent},
   {path:'shopping',component:ShoppingComponent},
-  {path:'productDetail',component:ProductDetailComponent}
+  {path:'product-detail/:id',component:ProductDetailComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forChild(routes),NgxPaginationModule],
+  exports: [RouterModule,NgxPaginationModule]
 })
 export class ShopBookRoutingModule { }

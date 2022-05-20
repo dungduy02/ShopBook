@@ -24,9 +24,17 @@
 
                     </li>
                     <li><a href="./blog.html">Bài Viết</a></li>
+                    
                     <li><a href="./contact.html">Liên Hệ</a></li>
-                    <button class="openBtn" onclick="openSearch()"><i class="fa fa-search"></i></button>
+                    <!-- <form class="form-inline" action="/action_page.php">
+                        <input class="form-control mr-sm-2" style="margin: 5px 0px;margin-left: 16px" type="text" 
+                        [(ngModel)]="name" (ngModelChange)="Search()"
+                               placeholder="Search">
+                        <button class="btn btn-success" type="submit" routerLink="/tour">Search</button>
+                      </form> -->
+                    <!-- <button class="openBtn" onclick="openSearch()"><i class="fa fa-search"></i></button> -->
                 </ul>
+                <input matInput type="text"  [(ngModel)]="searchword"(input)="searchThis()">
             </nav>
         </div>
         <div class="cart_favorite mt-3">

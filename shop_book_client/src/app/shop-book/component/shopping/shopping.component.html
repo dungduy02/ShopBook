@@ -1,18 +1,46 @@
 <app-header></app-header>
-<app-menu></app-menu>
+<app-menu (searchcriteria)="searchThis($event)"></app-menu>
 <section class="hero">
     <div class="container">
         <div class="row">
             <div class="col-lg-3">
                 <div class="hero__categories">
-                    <app-category></app-category>
+                    <!-- <app-category></app-category> -->
+                    <!-- <div class="col-lg-3"> -->
+    <!-- <div class="hero__categories"> -->
+        <div class="hero__categories__all">
+            <i class="fa fa-bars"></i>
+            <span>Danh mục</span>
+        </div>
+        <ul class="text_category">
+            <li><a href="#">Văn Học</a></li>
+            <li><a href="#">Kinh Tế</a></li>
+            <li><a href="#">Tâm Lý</a></li>
+            <li><a href="#">Kĩ Năng Sống</a></li>
+            <li><a href="#">Nuôi dạy con</a></li>
+            <li><a href="#">Sách Thiếu Nhi</a></li>
+            <li><a href="#">Tiểu Sử</a></li>
+            <li><a href="#">Giáo Dục</a></li>
+            <li><a href="#">Ngoại Ngữ</a></li>
+            <li><a href="#">Tham Khảo</a></li>
+            <li><a href="#">Hồi Ký</a></li>
+            <li><a href="#">Khác</a></li>
+        </ul>
+    <!-- </div> -->
+<!-- </div> -->
+
                 </div>
 
             </div>
+            
             <div class="col-lg-9 height_size">
                 <div class="hero__item set-bg" data-setbg="">
                     <!-- <app-slider class="fomat_style"></app-slider> -->
-
+                    <!-- <form class="form-inline" action="/action_page.php">
+                        <input class="form-control mr-sm-2" style="margin: 5px 0px;margin-left: 16px" type="text" name="title" [(ngModel)]="nameBook" (ngModelChange)="Search()"
+                               placeholder="Search">
+                        <button class="btn btn-success" type="submit" routerLink="/tour">Search</button>
+                      </form> -->
                     <section class="featured spad">
                         <div class="container">
                             <div class="row">
@@ -50,34 +78,46 @@
 
 
                             <div class="row featured__filter">
-                                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat" *ngFor="let b of listBooks">
+                                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat" *ngFor="let b of listBooks
+                                | paginate: {
+                                    itemsPerPage: tableSize,
+                                    currentPage: page,
+                                    totalItems: count
+                                    };
+                                    let i = index" [class.active]="i == 1">
                                     <div class="featured__item">
                                         <div class="featured__item  __pic set-bg" data-setbg="">
-                                            <img src="{{b.img}}"
-                                                alt="Book image" height="270px" width="500px">
+                                           <a routerLink="/product-detail/{{b.id}}"> <img src="{{b.img}}"
+                                                alt="Book image" height="270px" width="500px"></a>
                                             <ul class="featured__item__pic__hover">
                                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                               <li><a href="#"><i class="fa fa-retweet"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                                             </ul>
                                         </div>
                                         <div class="featured__item__text">
-                                            <h6><a href="./shop-details.html">{{b.name}} - {{b.author}}</a></h6>
-                                            <h5>{{b.category}}</h5>
-                                            <h5>{{b.price}}</h5>
+                                            <h6><a routerLink="/product-detail/{{b.id}}">{{b.name}} - {{b.author}}</a></h6>
+                                            <h5><a routerLink="/product-detail/{{b.id}}">{{b.category}}</a></h5>
+                                            <h5><a routerLink="/product-detail/{{b.id}}">{{b.price}}</a></h5>
+                                            <button class="btn btn-warning"(click)="(b.id)">Xem Book</button>
                                         </div>
                                     </div>
                                 </div>
                                 
                             </div>
                         </div>
-
-                        <div class="page_center">
+                        <nav class="mt-4" aria-label="Page navigation sample">
+                            <ul class="pagination">
+                              <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="tabSize($event)">
+                              </pagination-controls>
+                            </ul>
+                          </nav>
+                        <!-- <div class="page_center">
                             <span>1</span>
                             <span>2</span>
                             <span>3</span>
                             <span>...</span>
-                        </div>
+                        </div> -->
                     </section>
 
                 </div>
