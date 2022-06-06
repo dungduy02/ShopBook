@@ -16,6 +16,8 @@ import { ShoppingComponent } from './component/shopping/shopping.component';
 import { ProductDetailComponent } from './component/product-detail/product-detail.component';
 import { ContactComponent } from './component/contact/contact.component';
 import { CartComponent } from './component/cart/cart.component';
+import { SearchFilterPipe } from './search-filter.pipe';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -32,13 +34,15 @@ import { CartComponent } from './component/cart/cart.component';
     ShoppingComponent,
     ProductDetailComponent,
     ContactComponent,
-    CartComponent
+    CartComponent,
+    SearchFilterPipe,
+    FilterPipe
   ],
   imports: [
     CommonModule,
-    FormsModule,
     ShopBookRoutingModule,
-    ReactiveFormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
 
