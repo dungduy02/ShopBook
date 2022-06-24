@@ -18,7 +18,15 @@ import { ContactComponent } from './component/contact/contact.component';
 import { CartComponent } from './component/cart/cart.component';
 import { SearchFilterPipe } from './search-filter.pipe';
 import { FilterPipe } from './filter.pipe';
+import { LoginAdminComponent } from './component/admin/login-admin/login-admin.component';
+import { HeaderAdminComponent } from './component/admin/header-admin/header-admin.component';
+import { SideBarAdminComponent } from './component/admin/side-bar-admin/side-bar-admin.component';
+import { HomeAdminComponent } from './component/admin/home-admin/home-admin.component';
+import { ProductAdminComponent } from './component/admin/product/product-admin/product-admin.component';
+import { AddProductAdminComponent } from './component/admin/product/add-product-admin/add-product-admin.component';
+import { StaffAdminComponent } from './component/admin/staff/staff-admin/staff-admin.component';
 import { CheckoutComponent } from './component/checkout/checkout.component';
+
 
 @NgModule({
   declarations: [
@@ -38,6 +46,13 @@ import { CheckoutComponent } from './component/checkout/checkout.component';
     CartComponent,
     SearchFilterPipe,
     FilterPipe,
+    LoginAdminComponent,
+    HeaderAdminComponent,
+    SideBarAdminComponent,
+    HomeAdminComponent,
+    ProductAdminComponent,
+    AddProductAdminComponent,
+    StaffAdminComponent,
     CheckoutComponent
   ],
   imports: [
