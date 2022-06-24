@@ -16,6 +16,7 @@ import { HomeAdminComponent } from './component/admin/home-admin/home-admin.comp
 import { ProductAdminComponent } from './component/admin/product/product-admin/product-admin.component';
 import { AddProductAdminComponent } from './component/admin/product/add-product-admin/add-product-admin.component';
 import { StaffAdminComponent } from './component/admin/staff/staff-admin/staff-admin.component';
+import { CheckoutComponent } from './component/checkout/checkout.component';
 const routes: Routes = [
   {path: 'home',component: HomeComponent},
   {path: 'login', component: LoginComponent},
@@ -32,7 +33,9 @@ const routes: Routes = [
   {path:'admin/product',component:ProductAdminComponent},
   {path:'admin/product/add',component:AddProductAdminComponent},
   {path:'admin/staff',component:StaffAdminComponent},
-  {path:'cart',component:CartComponent}
+  {path:'cart',component:CartComponent},
+  {path:'cart',component:CartComponent},
+  {path:'checkout',component:CheckoutComponent}
 ];
 
 @NgModule({

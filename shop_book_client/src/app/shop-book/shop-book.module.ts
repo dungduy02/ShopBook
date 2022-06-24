@@ -25,6 +25,8 @@ import { HomeAdminComponent } from './component/admin/home-admin/home-admin.comp
 import { ProductAdminComponent } from './component/admin/product/product-admin/product-admin.component';
 import { AddProductAdminComponent } from './component/admin/product/add-product-admin/add-product-admin.component';
 import { StaffAdminComponent } from './component/admin/staff/staff-admin/staff-admin.component';
+import { CheckoutComponent } from './component/checkout/checkout.component';
+
 
 @NgModule({
   declarations: [
@@ -50,7 +52,8 @@ import { StaffAdminComponent } from './component/admin/staff/staff-admin/staff-a
     HomeAdminComponent,
     ProductAdminComponent,
     AddProductAdminComponent,
-    StaffAdminComponent
+    StaffAdminComponent,
+    CheckoutComponent
   ],
   imports: [
     CommonModule,

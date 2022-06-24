@@ -1,36 +1,39 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CartService } from '../../service/cart.service';
 import { TokenStorageService } from '../../service/token-storage.service';
 import { UserService } from '../../service/user.service';
-
+import { tap } from 'rxjs/operators';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-   roles: string[]=[];
+  roles: string[] = [];
+  cartObj: any = [];
   isLoggedIn = false;
+  cart_qty = 0;
+  cartTotalPrice = 0;
+  mainDialogType = "";
   showAdminBoard = false;
   showModeratorBoard = false;
   username!: string;
-  // listPost :PostDetails[];
   content: any;
-  constructor(private userService:UserService,private tokenStorageService: TokenStorageService) { }
+  pendingOrderLength!: number;
+  constructor( private router:Router, private cartService: CartService, private userService: UserService, private tokenStorageService: TokenStorageService) {
+    this.cartService.cartServiceEvent.subscribe(data=>{
+      this.cart_qty = this.cartService.getQty();
+    })
+   }
 
   ngOnInit(): void {
-    this.userService.getPublicContent().subscribe(
-      data => {
-        this.content = data;
-      },
-      err => {
-        this.content = JSON.parse(err.error).message;
-      }
-    );
+    
 
     this.isLoggedIn = !!this.tokenStorageService.getToken();
 
     if (this.isLoggedIn) {
-    
+
       const user = this.tokenStorageService.getUser();
       this.roles = user.roles;
 
@@ -40,25 +43,21 @@ export class HeaderComponent implements OnInit {
     }
 
   }
-
+  checkout_btn(){
+    this.router.navigate(['checkout']);
+   }
+  
   logout(): void {
     this.tokenStorageService.signOut();
     window.location.reload();
   }
-//  public searchPost(key:string):void{
-//    const result:PostDetails[]=[];
-//    for(const post of this.listPost){
-//      if(post.bookName.toLowerCase().indexOf(key.toLowerCase())!==-1
-//      ||post.user.toLowerCase().indexOf(key.toLowerCase())!==-1
-//      ||post.category.toLowerCase().indexOf(key.toLowerCase())!==-1
-//     ){
-//       result.push(post);
-//     }
-//    }
-//    this.listPost=result;
-//    if(result.length===0 ||!key){
-//      this.postDetailService.getPostDetail();
-//    }
-//  }
-
+  closeDialog() {
+    this.mainDialogType = "";
+  }
+ 
+  openCheckoutModel(){
+    this.cartObj =  this.cartService.getCartOBj();
+    this.cartTotalPrice  = this.cartService.cartTotalPrice;
+    this.mainDialogType = "checkout";
+  }
 }
