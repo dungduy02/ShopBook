@@ -66,7 +66,7 @@
                                             <input aria-label="quantity" class="input-qty" max="10" min="1" name="" type="number" value="1">
                                             <input class="plus is-form" type="button" value="+"> -->
 
-                                            <input
+                                            <!-- <input
                                                 onclick="var result = document.getElementById('quantity'); var qty = result.value; if( !isNaN(qty) &amp; qty > 1 ) result.value--;return false;"
                                                 type='button' value='-' class="quanity" />
                                             <input id='quantity' min='1' name='quantity' type='text' value='1'
@@ -74,8 +74,13 @@
                                             <input
                                                 onclick="var result = document.getElementById('quantity'); var qty = result.value; if( !isNaN(qty)) result.value++;return false;"
                                                 type='button' value='+' class="quanity" max="10" />
-                                            <a href="#" class="primary-btn" style="background:steelblue;">ADD TO
-                                                CARD</a>
+                                                <button (click)="addToCart(detailBook,quantityInput.value)" type="submit" class="w3ls-cart">Add to cart</button> -->
+                                                <div class="row">
+                                                    <div class="col-3">
+                                                      <input #quantityInput class="custom-quantity-input" type="number" min="1" value="1">
+                                                    </div>
+                                                    <button (click)="addCart(detailBook)" type="submit" class="w3ls-cart">Add to cart</button>
+                                                  </div>
                                         </div>
                                         <!-- <a href="#" class="primary-btn" style="background:steelblue;">ADD TO CARD</a> -->
                                         <!-- <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a> -->

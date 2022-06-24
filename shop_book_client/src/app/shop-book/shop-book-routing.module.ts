@@ -12,6 +12,7 @@ import { ProfileComponent } from './component/profile/profile.component';
 import { RegisterComponent } from './component/register/register.component';
 import { ShoppingComponent } from './component/shopping/shopping.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { CheckoutComponent } from './component/checkout/checkout.component';
 const routes: Routes = [
   {path: 'home',component: HomeComponent},
   {path: 'login', component: LoginComponent},
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path:'product-detail/:id',component:ProductDetailComponent},
   {path:'productDetail',component:ProductDetailComponent},
   {path:'contact',component:ContactComponent},
-  {path:'cart',component:CartComponent}
+  {path:'cart',component:CartComponent},
+  {path:'checkout',component:CheckoutComponent}
 ];
 
 @NgModule({

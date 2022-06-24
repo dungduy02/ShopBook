@@ -105,5 +105,8 @@
       }
     }
   },
-  "defaultProject": "shop_book_client"
+  "defaultProject": "shop_book_client",
+  "cli": {
+    "analytics": false
+  }
 }

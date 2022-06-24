@@ -260,3 +260,23 @@ body {
     font-size: 14px;
     background: #f2f2f2;
 }
+
+.modal.fade.login_dialog, #w3lssbmincart.checkout_dialog{
+    display: block;
+}
+#horizontalTab.login .tab-1.resp-tab-content{
+display: block;
+}
+#horizontalTab.register .tab-2.resp-tab-content{
+    display: block;
+}
+.w3l_login .username{
+    color: red;
+}
+
+
+
+
+.agile_ecommerce_tab_left{
+    margin-bottom: 5%;
+}

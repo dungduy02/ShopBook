@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FilterPipe } from 'ngx-filter-pipe';
 import { OrderPipe } from 'ngx-order-pipe';
 import { BookService } from '../../service/book.service';
+import { CartService } from '../../service/cart.service';
 
 @Component({
   selector: 'app-shopping',
@@ -12,13 +13,16 @@ import { BookService } from '../../service/book.service';
 export class ShoppingComponent implements OnInit {
   page = 1;
   count = 0;
+  cart_qty = 0;
   tableSize = 12;
   listBooks: any[] = [];
   id: any;
   sizeId = 1;
   searchText: any = '';
   searchKey: any = '';
-  constructor(private orderpipe: OrderPipe, private bookService: BookService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private orderpipe: OrderPipe,private cartService : CartService, private bookService: BookService, private router: Router, private route: ActivatedRoute) {
+    
+   }
 
   ngOnInit(): void {
     this.show();

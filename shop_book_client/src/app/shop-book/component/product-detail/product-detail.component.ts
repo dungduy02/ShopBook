@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BookService } from '../../service/book.service';
+import { CartService } from '../../service/cart.service';
+import { TokenStorageService } from '../../service/token-storage.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -8,19 +10,31 @@ import { BookService } from '../../service/book.service';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
-  id:any;
-  detailBook:any;
-  constructor(private bookService:BookService,private route:ActivatedRoute) { }
+  id: any;
+  detailBook: any;
+  constructor(private cartService:
+    CartService,private bookService: BookService,private router:Router,
+     private route: ActivatedRoute,private http:TokenStorageService,
+    ) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params =>{
-        this.id = params.get('id');
+    this.route.paramMap.subscribe(params => {
+      this.id = params.get('id');
     })
     this.showDetail(this.id);
   }
-  public showDetail(id:any){
-  this.bookService.getABook(id).subscribe((res=>{
-    this.detailBook = res;
-  }))
+  public showDetail(id: any) {
+    this.bookService.getABook(id).subscribe((res => {
+      this.detailBook = res;
+    }))
+  }
+  addCart(cartProductObj:any){
+    var cartObj = {
+      "bookId":cartProductObj.id,
+      "qty":"1",
+      "price":cartProductObj.price
     }
+    this.cartService.addCart(cartObj);
+  }
+  
 }

@@ -18,6 +18,7 @@ import { ContactComponent } from './component/contact/contact.component';
 import { CartComponent } from './component/cart/cart.component';
 import { SearchFilterPipe } from './search-filter.pipe';
 import { FilterPipe } from './filter.pipe';
+import { CheckoutComponent } from './component/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { FilterPipe } from './filter.pipe';
     ContactComponent,
     CartComponent,
     SearchFilterPipe,
-    FilterPipe
+    FilterPipe,
+    CheckoutComponent
   ],
   imports: [
     CommonModule,

@@ -37,6 +37,14 @@
                 <button *ngIf="isLoggedIn">
                   <a (click)="logout()" style="color:red">LogOut</a>
                 </button>
+                <!-- <div class="cart cart box_1 checkout-count-wrap"> 
+                  <form action="#" method="post" class="last">
+                    <button class="w3view-cart" type="submit" (click)="openCheckoutModel()" name="submit" value="">
+                      <p class="total_count_checkout">{{cart_qty}}</p>
+                      <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                    </button>
+                  </form>
+                </div>  -->
               </div>
             </div>
           </div>
@@ -45,4 +53,37 @@
       </div>
     </div>
   </div>
+  
 </header>
+<!-- <div [ngClass]="[mainDialogType == 'checkout' ? 'checkout_dialog' : '']" id="w3lssbmincart">
+  <form method="post" class="" target="">
+    <button type="button" (click)="closeDialog()" class="sbmincart-closer">×</button>
+    <ul>
+      <li *ngFor="let cartObjItem of  cartObj" class="sbmincart-item sbmincart-item-changed">
+        <div class="sbmincart-details-name">
+          <a class="sbmincart-name">{{cartObjItem.bookName}}</a>
+          <ul class="sbmincart-attributes">
+          </ul>
+        </div>
+        <div class="sbmincart-details-quantity">
+          <input class="sbmincart-quantity" data-sbmincart-idx="0" name="quantity_1" type="text" value="1"
+            autocomplete="off">
+        </div>
+        <div class="sbmincart-details-remove">
+          <button type="button" class="sbmincart-remove" data-sbmincart-idx="0">×</button>
+        </div>
+        <div class="sbmincart-details-price">
+          <span class="sbmincart-price">{{cartObjItem.price}}</span>
+        </div>
+      </li>
+
+    </ul>
+    <div class="sbmincart-footer">
+      <div class="sbmincart-subtotal">
+        Subtotal: {{cartTotalPrice}}
+      </div>
+      <span (click)="checkout_btn()">Checkout Cart</span>
+    </div>
+    <input type="hidden" name="bn" value="sbmincart_AddToCart_WPS_US">
+  </form>
+</div> -->
