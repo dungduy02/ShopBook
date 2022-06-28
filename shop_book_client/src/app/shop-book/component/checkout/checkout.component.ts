@@ -32,13 +32,14 @@ export class CheckoutComponent implements OnInit {
      this.http.postRequestWithToken("api/addtocart/updateQtyForCart",request).subscribe((data:any)=>{
        this.cartService.getCartDetailsByUser();//for updating in the application..
      },error=>{
-       alert("Error while fetching the cart Details");
+       
      })
    }
   removeItem(cartObj:any){
     if(confirm("Are you sure want to delete..?")){
       let id  = cartObj.id;
       this.cartService.removeCart(id);
+      
     } 
   }
   getTotalAmounOfTheCart(){
@@ -55,7 +56,7 @@ export class CheckoutComponent implements OnInit {
       this.cartObj = data;
       this.cartTotalPrice = this.getTotalAmounOfTheCart();   
     },error=>{
-      alert("Error while fetching the cart Details");
+     
     })
   }
   checkoutCart(){

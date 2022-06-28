@@ -12,6 +12,7 @@ import { tap } from 'rxjs/operators';
 export class HeaderComponent implements OnInit {
   roles: string[] = [];
   cartObj: any = [];
+ 
   isLoggedIn = false;
   cart_qty = 0;
   cartTotalPrice = 0;

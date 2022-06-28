@@ -34,7 +34,11 @@ export class ProductDetailComponent implements OnInit {
       "qty":"1",
       "price":cartProductObj.price
     }
+    if(this.http.getToken()){
     this.cartService.addCart(cartObj);
+    }else{
+      alert("vui lòng đăng nhập để mua hàng")
+    }
   }
   
 }
