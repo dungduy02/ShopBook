@@ -1,6 +1,7 @@
 <app-header></app-header>
 <app-menu></app-menu>
-<div class="cartTable"><p style="font-size: 30px;color:#be975a">Your Cart</p>
+<div class="cartTable">
+    <!-- <p style="font-size: 30px;color:#be975a">Your Cart</p> -->
 <ng-container *ngIf="cartObj.length !=0">
     <div class="container">
         <div class="card-table">
@@ -19,8 +20,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let item of cartObj; let i = index">
-                            <td>{{i+1}}</td>
+                        <tr *ngFor="let item of cartObj">
+                            <!-- <td>{{i+1}}</td> -->
                             <td>{{item.bookName}}</td>
                             <td><img style="width: 120px;" src="{{item.img}}" alt=""></td>
                            
@@ -44,18 +45,20 @@
         </div>
     </div>
 </ng-container>
-</div>
-
 <ng-container *ngIf="cartObj.length ==0">
     <div class="container">
-        <div class="card">
-            <h5 class="card-title">My Cart</h5>
-        </div>
+        <!-- <div class="card">
+            <h5 class="card-title">Your Cart</h5>
+        </div> -->
         <div class="center">
-            <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="">
-            <h4>Your cart is empty!</h4>
-            <h6>Add item to it now</h6>
-            <button routerLink="/products" class="btn btn-primary">Shop Now</button>
+            <h4>Giỏ hàng đang trống!</h4>
+            <h6>Mua hàng ngay bây giờ</h6>
+  
+            <button routerLink="/shopping" class="btn btn-primary">Shop Now</button>
+            <br/>
+            <img class="cartEmpty" style="height: 400px" src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="">
+         
         </div>
     </div>
 </ng-container>
+</div>

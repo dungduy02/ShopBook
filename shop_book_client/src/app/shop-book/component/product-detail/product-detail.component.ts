@@ -36,6 +36,8 @@ export class ProductDetailComponent implements OnInit {
     }
     if(this.http.getToken()){
     this.cartService.addCart(cartObj);
+    
+    console.log(cartObj);
     }else{
       alert("vui lòng đăng nhập để mua hàng")
     }

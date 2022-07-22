@@ -18,6 +18,8 @@ export class MenuComponent implements OnInit {
   constructor(private http: TokenStorageService, private router: Router, private cartService: CartService) {
     this.cartService.cartServiceEvent.subscribe(data => {
       this.cart_qty = this.cartService.getQty();
+      console.log(this.cart_qty);
+      
     })
   }
   ngOnInit() {
@@ -59,7 +61,7 @@ export class MenuComponent implements OnInit {
 
     }
     console.log(request);
-    this.http.postRequestWithToken("api/public/books/updateQtyForCart", request).subscribe((data: any) => {
+    this.http.postRequestWithToken("api/cart/updateQtyForCart", request).subscribe((data: any) => {
       this.cartService.getCartDetailsByUser();//for updating in the application..
     }, error => {
       alert("Error while fetching the cart Details");
@@ -96,7 +98,7 @@ export class MenuComponent implements OnInit {
     // var quantity2 = parseInt(request.qty)
     
     console.log(request);
-    this.http.postRequestWithToken("api/public/books/updateQtyForCart", request).subscribe((data: any) => {
+    this.http.postRequestWithToken("api/cart/updateQtyForCart", request).subscribe((data: any) => {
       this.cartService.getCartDetailsByUser();//for updating in the application..
     }, error => {
       alert("Error while fetching the cart Details");
@@ -113,7 +115,7 @@ export class MenuComponent implements OnInit {
     this.mainDialogType = "";
   }
   checkout_btn() {
-    this.router.navigate(['/checkout']);
+    this.router.navigate(['/cart']);
   }
   closeDialog() {
     this.mainDialogType = "";

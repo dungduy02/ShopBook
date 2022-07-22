@@ -29,11 +29,10 @@ const routes: Routes = [
   {path:'product-detail/:id',component:ProductDetailComponent},
   {path:'productDetail',component:ProductDetailComponent},
   {path:'contact',component:ContactComponent},
-  {path:'admin/home',component:HomeAdminComponent},
+  {path:'admin',component:HomeAdminComponent},
   {path:'admin/product',component:ProductAdminComponent},
   {path:'admin/product/add',component:AddProductAdminComponent},
   {path:'admin/staff',component:StaffAdminComponent},
-  {path:'cart',component:CartComponent},
   {path:'cart',component:CartComponent},
   {path:'checkout',component:CheckoutComponent}
 ];

@@ -29,7 +29,7 @@ export class CheckoutComponent implements OnInit {
      "qty":qty,
      "price":(cartObj.price)*(qty)
    }
-     this.http.postRequestWithToken("api/addtocart/updateQtyForCart",request).subscribe((data:any)=>{
+     this.http.postRequestWithToken("api/cart/updateQtyForCart",request).subscribe((data:any)=>{
        this.cartService.getCartDetailsByUser();//for updating in the application..
      },error=>{
        
@@ -52,7 +52,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   getCartDetailsByUser(){
-    this.http.postRequestWithToken("api/addtocart/getCartsByUserId",{}).subscribe((data:any)=>{
+    this.http.postRequestWithToken("api/cart/getCartsByUserId",{}).subscribe((data:any)=>{
       this.cartObj = data;
       this.cartTotalPrice = this.getTotalAmounOfTheCart();   
     },error=>{
@@ -73,7 +73,7 @@ export class CheckoutComponent implements OnInit {
       this.http.postRequestWithToken("api/order/checkout_order",request).subscribe((data:any)=>{
         alert("checkout process completed.Your Order is processed..");
         this.cartService.getCartDetailsByUser();
-        this.router.navigate(['']);
+        this.router.navigate(['/shopping']);
      },error=>{
         alert("Error while fetching the cart Details");
       })

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../service/auth.service';
+import { CartService } from '../../service/cart.service';
 import { TokenStorageService } from '../../service/token-storage.service';
 import { HomeComponent } from '../home/home.component';
 @Component({
@@ -16,8 +17,8 @@ export class LoginComponent implements OnInit {
   errorMessage = '';
   roles: string[] = [];
 
-  msg:any;
-  constructor(private router:Router,private route:ActivatedRoute, private authService: AuthService, private tokenStorage: TokenStorageService) { }
+  msg: any;
+  constructor(private cartService:CartService,private router: Router, private route: ActivatedRoute, private authService: AuthService, private tokenStorage: TokenStorageService) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -35,23 +36,30 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
-    
-        window.location.assign('http://localhost:4200/home')
-        
-      },
-      err => {
-        this.errorMessage = err.error.message;
-        this.msg = "sai roi"
-        // this.msg = "Username or password incorrect"
+        for (let index = 0; index < this.roles.length; index++) {
+
+          if (this.roles[index] == 'ROLE_USER') {
+            // this.cartService.getCartDetailsByUser();
+            window.location.assign('http://localhost:4200/home')
+          }
+          if (this.roles[index] == 'ROLE_ADMIN') {
+            window.location.assign('http://localhost:4200/admin')
+          }
+        }
+
+        },
+        err => {
+          this.errorMessage = err.error.message;
+          // this.msg = "Username or password incorrect"
           this.isLoginFailed = true;
-      }
+        }
     );
   }
 
   reloadComponent() {
-        this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-        this.router.onSameUrlNavigation = 'reload';
-        this.router.navigate(['home']);
-    }
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.onSameUrlNavigation = 'reload';
+    this.router.navigate(['home']);
+  }
 
 }

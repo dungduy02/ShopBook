@@ -10,7 +10,8 @@ a{
 
 
 .breadcrumb-section {
-    width: 85%;
+    width: 82%;
+	height: 23%;
     background: #be975a;
     display: flex;
     align-items: center;
@@ -52,13 +53,13 @@ a{
 
 
 .shoping-cart {
-	padding-top: 80px;
+	padding-top: 25px;
 	padding-bottom: 80px;
 }
 
 .shoping__cart__table {
-    border: 1px solid #1c1c1c;
-	margin-bottom: 30px;
+    border: 3px solid #be975a;
+	margin-bottom: 30px;	
 }
 
 .shoping__cart__table table {
