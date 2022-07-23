@@ -56,7 +56,7 @@ export class ShoppingComponent implements OnInit {
         // console.log(data);
         this.listBooks = this.orderpipe.transform(data, 'name');
         this.arrays = data;
-        console.log(this.arrays);
+        console.log("LIST BOOK",this.arrays,typeof this.arrays);
 
       })
   }

@@ -26,6 +26,7 @@ import { ProductAdminComponent } from './component/admin/product/product-admin/p
 import { AddProductAdminComponent } from './component/admin/product/add-product-admin/add-product-admin.component';
 import { StaffAdminComponent } from './component/admin/staff/staff-admin/staff-admin.component';
 import { CheckoutComponent } from './component/checkout/checkout.component';
+import { AddStaffAdminComponent } from './component/admin/staff/add-staff-admin/add-staff-admin.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { CheckoutComponent } from './component/checkout/checkout.component';
     ProductAdminComponent,
     AddProductAdminComponent,
     StaffAdminComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    AddStaffAdminComponent
   ],
   imports: [
     CommonModule,
