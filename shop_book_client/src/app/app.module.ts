@@ -12,6 +12,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { OrderModule } from "ngx-order-pipe";
 import { FilterPipeModule } from "ngx-filter-pipe";
 import { Ng2SearchPipeModule } from "ng2-search-filter";
+import { ModalModule } from 'ngx-bootstrap/modal';  
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +21,7 @@ import { Ng2SearchPipeModule } from "ng2-search-filter";
     BrowserModule,
     OrderModule,
     FilterPipeModule,
+    ModalModule.forRoot(),  
     FormsModule,
     Ng2SearchPipeModule,
     FormsModule,
