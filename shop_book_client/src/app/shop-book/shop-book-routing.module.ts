@@ -34,7 +34,6 @@ const routes: Routes = [
   {path:'admin/product/add',component:AddProductAdminComponent},
   {path:'admin/staff',component:StaffAdminComponent},
   {path:'cart',component:CartComponent},
-  {path:'cart',component:CartComponent},
   {path:'checkout',component:CheckoutComponent}
 ];
 

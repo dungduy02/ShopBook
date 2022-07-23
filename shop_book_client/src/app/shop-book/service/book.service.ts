@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CartService } from './cart.service';
-const API_URL = 'http://localhost:8080/api/public/books/';
+const API_URL = 'http://localhost:8080/api/public/';
 @Injectable({
   providedIn: 'root'
 })
@@ -10,7 +10,7 @@ export class BookService {
 
   constructor(private http:HttpClient,private cartService:CartService) { }
   getBooks(): Observable<any> {
-    return this.http.get(API_URL + 'all');
+    return this.http.get(API_URL + 'allBook');
   }
   getABook(id: any) :Observable<any> {
     return this.http.get(API_URL + 'find/' + id);

@@ -17,7 +17,7 @@ export class CartService {
    }
 
    getCartDetailsByUser(){
-     this.http.postRequestWithToken("api/public/books/getCartsByUserId",{}).subscribe((data:any)=>{
+     this.http.postRequestWithToken("api/cart/getCartsByUserId",{}).subscribe((data:any)=>{
       //alert("Error while fetching the cart Details");
       this.cartObj = data;
       this.cartQty = data.length;
@@ -36,7 +36,7 @@ export class CartService {
       "qty":obj.qty,
       "price":obj.price
     }
-    this.http.postRequestWithToken("api/public/books/addProduct",request).subscribe((data:any)=>{
+    this.http.postRequestWithToken("api/cart/addProduct",request).subscribe((data:any)=>{
       this.getCartDetailsByUser()
     },
     error=>{
@@ -67,7 +67,7 @@ export class CartService {
           "bookId":"dummy_val",
           "cartId":cartId,
       }
-      this.http.postRequestWithToken("api/public/books/removeProductFromCart",request).subscribe((data:any)=>{
+      this.http.postRequestWithToken("api/cart/removeProductFromCart",request).subscribe((data:any)=>{
           this.getCartDetailsByUser();
       },error=>{
         alert("Error while fetching the cart Details");
