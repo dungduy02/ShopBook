@@ -1,7 +1,7 @@
 import { Component, OnInit,TemplateRef  } from '@angular/core';
 import { OrderPipe } from 'ngx-order-pipe';
 import { UserService } from 'src/app/shop-book/service/user.service';
-import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal'; 
+  import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal'; 
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
@@ -14,7 +14,7 @@ export class StaffAdminComponent implements OnInit {
   listUser: any[] = [];
   arrays: any = [];
   public userObj: any = [];
-  editModal:any;
+    editModal:any;
   updateUserForm!:FormGroup;
 
   constructor(private orderpipe: OrderPipe, private userService: UserService, private modalService: BsModalService, 

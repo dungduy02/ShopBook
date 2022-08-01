@@ -10,7 +10,6 @@ import { UserService } from 'src/app/shop-book/service/user.service';
   styleUrls: ['./add-staff-admin.component.css']
 })
 export class AddStaffAdminComponent implements OnInit {
-  info : any;
   formValue!: FormGroup;
   selectedFile!: File;
 

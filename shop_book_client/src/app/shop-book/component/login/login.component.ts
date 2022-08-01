@@ -35,8 +35,16 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
-    
-        window.location.assign('http://localhost:4200/home')
+        for (let index = 0; index < this.roles.length; index++) {
+
+          if (this.roles[index] == 'ROLE_USER') {
+            // this.cartService.getCartDetailsByUser();
+            window.location.assign('http://localhost:4200/home')
+          }
+          if (this.roles[index] == 'ROLE_ADMIN') {
+            window.location.assign('http://localhost:4200/admin')
+          }
+        }
         
       },
       err => {

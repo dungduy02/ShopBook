@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, BehaviorSubject, map } from 'rxjs';
 import { TokenStorageService } from './token-storage.service';
 
-const API_URL = 'http://localhost:8080/api/test/';
+const API_URL = 'http://localhost:8080/api/admin/';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,9 @@ export class UserService {
   constructor(private http: HttpClient, private https:TokenStorageService) { 
     // this.getUserID(); 
   }
-
+  getBooks(): Observable<any> {
+    return this.http.get(API_URL + 'allBook');
+  }
   getPublicContent(): Observable<any> {
     return this.http.get(API_URL + 'all', { responseType: 'text' });
   }
@@ -55,7 +57,6 @@ export class UserService {
   getAUser(id: any) :Observable<any> {
     return this.http.get(API_URL + 'findUserId/' + id);
   }
-
   getUpdateUser(data:any, userId: number){
     return this.http.put(`${API_URL +"updateUser"}/${userId}`, data).pipe(map(
       (reponse: any) =>{

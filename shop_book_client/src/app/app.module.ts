@@ -13,6 +13,7 @@ import { OrderModule } from "ngx-order-pipe";
 import { FilterPipeModule } from "ngx-filter-pipe";
 import { Ng2SearchPipeModule } from "ng2-search-filter";
 import { ModalModule } from 'ngx-bootstrap/modal';  
+import { UploadImageService } from "./shop-book/service/upload-image.service";
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     FormsModule,
     AppRoutingModule, ShopBookModule, NgxPaginationModule, RouterModule, HttpClientModule, ReactiveFormsModule, NgbModule
   ],
-  providers: [],
+  providers: [
+    UploadImageService
+  ],
   exports: [HttpClientModule, NgxPaginationModule],
   bootstrap: [AppComponent]
 })

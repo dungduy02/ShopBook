@@ -18,6 +18,7 @@ import { AddProductAdminComponent } from './component/admin/product/add-product-
 import { StaffAdminComponent } from './component/admin/staff/staff-admin/staff-admin.component';
 import { CheckoutComponent } from './component/checkout/checkout.component';
 import { AddStaffAdminComponent } from './component/admin/staff/add-staff-admin/add-staff-admin.component';
+import { OrderComponent } from './component/admin/order/order.component';
 const routes: Routes = [
   {path: 'home',component: HomeComponent},
   {path: 'login', component: LoginComponent},
@@ -30,13 +31,14 @@ const routes: Routes = [
   {path:'product-detail/:id',component:ProductDetailComponent},
   {path:'productDetail',component:ProductDetailComponent},
   {path:'contact',component:ContactComponent},
-  {path:'admin/home',component:HomeAdminComponent},
+  {path:'admin',component:HomeAdminComponent},
   {path:'admin/product',component:ProductAdminComponent},
   {path:'admin/product/add',component:AddProductAdminComponent},
   {path:'admin/staff',component:StaffAdminComponent},
   {path:'admin/staff/add',component:AddStaffAdminComponent},
   {path:'cart',component:CartComponent},
-  {path:'checkout',component:CheckoutComponent}
+  {path:'checkout',component:CheckoutComponent},
+  {path:'admin/order',component:OrderComponent}
 ];
 
 @NgModule({

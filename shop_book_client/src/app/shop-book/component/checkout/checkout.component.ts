@@ -52,6 +52,19 @@ export class CheckoutComponent implements OnInit {
     })
   }
   checkoutCart() {
+    var cart_qty: any;
+    if (this.http.getToken()) {
+      this.cartService.cartServiceEvent.subscribe(data => {
+        cart_qty = this.cartService.getQty();
+      })
+      if(cart_qty==0){
+        alert("vui lòng thêm sản phẩm vào giỏ hàng")
+      }else{
+      this.router.navigate(['/checkout']);
+      }
+    } else {
+      alert("vui lòng đăng nhập để tiếp tục")
+    }
     if (this.delivery_address == "") {
       alert("Delivery address should not be empty");
       return;
